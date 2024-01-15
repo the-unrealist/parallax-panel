@@ -19,12 +19,12 @@ class UParallaxPanelSlot : public UOverlaySlot
     GENERATED_BODY()
 
 public:
-    /** Sets the distance of this slot in abstract units. */
-    UFUNCTION(BlueprintCallable, Category="Layout|Parallax Panel Slot")
+    /** Sets the distance of this slot in Slate units. */
+    UFUNCTION(BlueprintCallable, Category = "Layout|Parallax Panel Slot")
     void SetDistance(float InDistance);
 
-    /** Gets the distance of this slot in abstract units. */
-    UFUNCTION(BlueprintPure, Category="Layout|Parallax Panel Slot")
+    /** Gets the distance of this slot in Slate units. */
+    UFUNCTION(BlueprintPure, Category = "Layout|Parallax Panel Slot")
     float GetDistance() const;
 
 protected:
@@ -38,6 +38,6 @@ protected:
      * Controls how much this slot translates compared to other slots. A higher value indicates that this slot should
      * appear further away and will have smaller translations when the offset of a UParallaxPanel changes.
      */
-    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintGetter=GetDistance, BlueprintSetter=SetDistance, Category="Layout|Parallax Panel Slot", meta=(DesignerRebuild, UIMin=0, ClampMin=0, Delta=1, LinearDeltaSensitivity=1))
+    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintGetter = GetDistance, BlueprintSetter = SetDistance, Category = "Layout|Parallax Panel Slot", meta = (DesignerRebuild, UIMin = 0, ClampMin = 0, Delta = 1, LinearDeltaSensitivity = 1))
     float Distance;
 };

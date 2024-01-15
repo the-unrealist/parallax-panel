@@ -24,27 +24,27 @@ public:
 #endif
 
     /** Adds a child to this panel. */
-    UFUNCTION(BlueprintCallable, Category="Widget")
-    class UParallaxPanelSlot* AddChildToParallaxPanel(UWidget* Content);
+    UFUNCTION(BlueprintCallable, Category = "Widget")
+    class UParallaxPanelSlot *AddChildToParallaxPanel(UWidget *Content);
 
     /** Sets the offset. This will translate all child widgets based on their distance. */
-    UFUNCTION(BlueprintCallable, Category="Parallax Panel")
+    UFUNCTION(BlueprintCallable, Category = "Parallax Panel")
     void SetOffset(FVector2D InOffset);
 
     /** Gets the current parallax perspective. */
     FVector2D GetOffset() const;
 
 protected:
-    virtual UClass* GetSlotClass() const override;
-    virtual void OnSlotAdded(UPanelSlot* InSlot) override;
-    virtual void OnSlotRemoved(UPanelSlot* InSlot) override;
+    virtual UClass *GetSlotClass() const override;
+    virtual void OnSlotAdded(UPanelSlot *InSlot) override;
+    virtual void OnSlotRemoved(UPanelSlot *InSlot) override;
 
     virtual TSharedRef<SWidget> RebuildWidget() override;
     virtual void ReleaseSlateResources(bool bReleaseChildren) override;
     virtual void SynchronizeProperties() override;
 
     /** The current offset. */
-    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintSetter=SetOffset, Category="Parallax Panel", meta=(Delta=1, LinearDeltaSensitivity=1))
+    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintSetter = SetOffset, Category = "Parallax Panel", meta = (Delta = 1, LinearDeltaSensitivity = 1))
     FVector2D Offset;
 
     TSharedPtr<SOverlay> ContainerOverlay;
