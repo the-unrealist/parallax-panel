@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Parallax Panel",
+	"Description": "A 2D parallax panel widget that creates an illusion of depth in UI.",
+	"Category": "UI",
+	"CreatedBy": "citrus",
+	"CreatedByURL": "https://unrealist.org",
+	"DocsURL": "https://unrealist.org/plugins/parallax-panel",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ParallaxPanel",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
