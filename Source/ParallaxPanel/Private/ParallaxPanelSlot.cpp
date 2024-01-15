@@ -32,8 +32,7 @@ void UParallaxPanelSlot::BuildSlot(TSharedRef<SOverlay> InOverlay)
     // Wrap the child widget in a container so that parallax transformation is applied without overriding the child's
     // existing render transform properties.
     TSharedRef<SOverlay> ContentContainer =
-        SNew(SOverlay) + SOverlay::Slot()
-                             [Content == nullptr ? SNullWidget::NullWidget : Content->TakeWidget()];
+        SNew(SOverlay) + SOverlay::Slot()[Content == nullptr ? SNullWidget::NullWidget : Content->TakeWidget()];
 
     InOverlay->AddSlot()
         .Expose(Slot)
