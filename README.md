@@ -11,23 +11,27 @@ A 2D panel widget that simulates a 3D depth effect in user interfaces.
 * Supports [widget animations](https://docs.unrealengine.com/5.3/en-US/animating-umg-widgets-in-unreal-engine/)
 
 ## User Guide
-1. In a widget blueprint, create a Parallax Panel widget from the palette.
+In a widget blueprint, create a Parallax Panel widget from the palette.
+
 ![Screenshot showing Parallax Panel categorized under Panel in the Palette window.](.images/01-palette.png)
-<br/>
-2. Add child widgets to the panel. Set the **Distance** of the layer under *Slot (Parallax Panel Slot)* in the Details panel.
-![Screenshot showing the Distance property in the details pane for a child widget. The property is marked with a red arrow.](.images/02-layer-distance.png)
-<br/>
-3. The **Offset** property in the Parallax Panel controls the perspective.
-![todo](.images/03-panel-offset.png)
+<br /><br />
 
-## Layer Distance & Offset
-The parallax scrolling equation used in this plugin is:
+Add child widgets to the panel. Each child widget is a layer.
 
-```math
-Transform = Offset\cdot\frac{1}{1+(\frac{Distance}{100})}
-```
+![Screenshot showing a Parallax Panel widget with three different image child widgets in the hierarchy.](.images/02b-hierarchy.png)
+<br /><br />
 
-A layer with a distance of 100 will move twice as slow as a layer with a distance of zero.
+Set the **Distance** of each layer under *Slot (Parallax Panel Slot)* in the Details panel.
+
+![Screenshot showing the Distance property in the details panel for a child widget. The property is marked with a red arrow.](.images/02-layer-distance.png)
+<br /><br />
+
+Use the **Offset** property in the Parallax Panel to control the perspective.
+
+![Screenshot showing the Offset property in the details panel for a Parallax Panel widget.](.images/03-panel-offset.png)
+<br /><br />
+
+The parallax scrolling equation used in this plugin is $Transform = Offset\cdot\frac{1}{1+(\frac{Distance}{100})}$. A layer with a distance of 100 will move twice less than as a layer with a distance of zero.
 
 ---------------------
 
