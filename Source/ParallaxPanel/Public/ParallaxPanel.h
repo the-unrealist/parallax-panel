@@ -32,6 +32,7 @@ public:
     void SetOffset(FVector2D InOffset);
 
     /** Gets the current parallax perspective. */
+    UFUNCTION(BlueprintPure, Category="Parallax Panel")
     FVector2D GetOffset() const;
 
 protected:
@@ -44,7 +45,7 @@ protected:
     virtual void SynchronizeProperties() override;
 
     /** The current offset. */
-    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintSetter = SetOffset, Category = "Parallax Panel", meta = (Delta = 1, LinearDeltaSensitivity = 1))
+    UPROPERTY(EditAnywhere, Getter, Setter, BlueprintGetter = GetOffset, BlueprintSetter = SetOffset, Category = "Parallax Panel", meta = (Delta = 1, LinearDeltaSensitivity = 1))
     FVector2D Offset;
 
     TSharedPtr<SOverlay> ContainerOverlay;
